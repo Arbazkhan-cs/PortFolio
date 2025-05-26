@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronDown, Mail, Phone, Linkedin, Github, ExternalLink, Code, Brain, Database, Cpu, Star, Calendar, MapPin, GraduationCap, Briefcase, User } from 'lucide-react';
 import './App.css';
+import profileImage from './img1.jpeg'
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -17,7 +18,7 @@ const Portfolio = () => {
   useEffect(() => {
     const currentRole = roles[typingIndex];
     let charIndex = 0;
-    
+
     const typingInterval = setInterval(() => {
       if (charIndex <= currentRole.length) {
         setTypingText(currentRole.substring(0, charIndex));
@@ -46,11 +47,11 @@ const Portfolio = () => {
       const scrollTop = window.scrollY;
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
       const scrollPercent = (scrollTop / docHeight) * 100;
-      
+
       setIsScrolled(scrollTop > 50);
       setScrollProgress(scrollPercent);
     };
-    
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -63,14 +64,14 @@ const Portfolio = () => {
             ...prev,
             [entry.target.id]: entry.isIntersecting
           }));
-          
+
           // Update active section based on what's most visible
           if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
             setActiveSection(entry.target.id);
           }
         });
       },
-      { 
+      {
         threshold: [0.1, 0.5, 0.9],
         rootMargin: '-50px 0px -50px 0px'
       }
@@ -139,7 +140,7 @@ const Portfolio = () => {
   ];
 
   const FloatingParticle = ({ delay = 0 }) => (
-    <div 
+    <div
       className="floating-particle"
       style={{
         left: `${Math.random() * 100}%`,
@@ -163,7 +164,7 @@ const Portfolio = () => {
   return (
     <div className="portfolio-container">
       <GlowCursor />
-      
+
       {/* Floating Particles */}
       {[...Array(20)].map((_, i) => (
         <FloatingParticle key={i} delay={i * 0.5} />
@@ -173,13 +174,13 @@ const Portfolio = () => {
       <nav className={`navbar ${isScrolled ? 'navbar-scrolled' : ''}`}>
         <div className="navbar-container">
           <div className="navbar-content">
-            <div 
+            <div
               className="navbar-logo"
               onClick={() => scrollToSection('home')}
             >
               PortFolio
             </div>
-            
+
             {/* Desktop Navigation */}
             <div className="navbar-desktop">
               {[
@@ -199,21 +200,21 @@ const Portfolio = () => {
                   >
                     <Icon size={16} />
                     <span>{item.label}</span>
-                    
+
                     {/* Active indicator */}
                     {activeSection === item.id && (
                       <div className="nav-active-indicator"></div>
                     )}
-                    
+
                     {/* Hover effect */}
                     <span className="nav-hover-effect"></span>
                   </button>
                 );
               })}
             </div>
-            
+
             {/* Mobile Menu Button */}
-            <button 
+            <button
               className="mobile-menu-btn"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
@@ -224,7 +225,7 @@ const Portfolio = () => {
               </div>
             </button>
           </div>
-          
+
           {/* Mobile Navigation Menu */}
           <div className={`mobile-menu ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`}>
             <div className="mobile-menu-content">
@@ -254,7 +255,7 @@ const Portfolio = () => {
             </div>
           </div>
         </div>
-        
+
         {/* Progress Bar */}
         <div className="progress-bar" style={{ width: `${scrollProgress}%` }}></div>
       </nav>
@@ -275,27 +276,43 @@ const Portfolio = () => {
           <div className="hero-avatar">
             <div className="avatar-container">
               <div className="avatar-bg">
-                <User size={80} className="avatar-icon" />
+                {profileImage ? (
+                  <img
+                    src={profileImage}
+                    alt="Arbaz Khan - AI/ML Developer"
+                    className="avatar-image"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.nextSibling.style.display = 'block';
+                    }}
+                  />
+                ) : null}
+                <User
+                  size={80}
+                  className="avatar-icon"
+                  style={{ display: profileImage ? 'none' : 'block' }}
+                />
               </div>
             </div>
           </div>
-          
+
+
           <h1 className="hero-title">
             Arbaz Khan
           </h1>
-          
+
           <div className="hero-subtitle">
             <span className="typing-text">
               {typingText}
               <span className="typing-cursor">|</span>
             </span>
           </div>
-          
+
           <p className="hero-description">
-            Passionate about building intelligent systems and pushing the boundaries of artificial intelligence. 
+            Passionate about building intelligent systems and pushing the boundaries of artificial intelligence.
             Specializing in LLMs, Computer Vision, and AI-powered applications.
           </p>
-          
+
           <div className="hero-buttons">
             <a
               href="mailto:arbazkhaan.cs@gmail.com"
@@ -319,7 +336,7 @@ const Portfolio = () => {
             </a>
           </div>
         </div>
-        
+
         <div className="scroll-indicator">
           <ChevronDown size={32} />
         </div>
@@ -331,21 +348,21 @@ const Portfolio = () => {
           <h2 className="section-title">
             About Me
           </h2>
-          
+
           <div className="about-content">
             <div className="about-text">
               <p className="about-paragraph">
-                I'm a passionate AI/ML developer currently pursuing my Bachelor's in Computer Application with 
-                specialization in Artificial Intelligence at Maharaja Surajmal Institute, Delhi. With a stellar 
+                I'm a passionate AI/ML developer currently pursuing my Bachelor's in Computer Application with
+                specialization in Artificial Intelligence at Maharaja Surajmal Institute, Delhi. With a stellar
                 CGPA of 9.4/10, I've dedicated myself to mastering the cutting-edge technologies that shape our future.
               </p>
-              
+
               <p className="about-paragraph">
-                My journey in AI has led me to work on fascinating projects from voice-controlled assistants to 
-                transformer models built from scratch. I believe in the power of AI to solve real-world problems 
+                My journey in AI has led me to work on fascinating projects from voice-controlled assistants to
+                transformer models built from scratch. I believe in the power of AI to solve real-world problems
                 and create meaningful impact.
               </p>
-              
+
               <div className="about-badges">
                 <div className="badge badge-blue">
                   <GraduationCap size={20} />
@@ -361,7 +378,7 @@ const Portfolio = () => {
                 </div>
               </div>
             </div>
-            
+
             <div className="about-contact">
               <div className="contact-card">
                 <div className="contact-item">
@@ -373,7 +390,7 @@ const Portfolio = () => {
                     <p className="contact-value">+91 995-353-2472</p>
                   </div>
                 </div>
-                
+
                 <div className="contact-item">
                   <div className="contact-icon contact-icon-purple">
                     <Mail size={24} />
@@ -383,7 +400,7 @@ const Portfolio = () => {
                     <p className="contact-value">arbazkhaan.cs@gmail.com</p>
                   </div>
                 </div>
-                
+
                 <div className="contact-social">
                   <a href="https://linkedin.com/in/arbazkhan-cs" className="social-btn social-btn-blue">
                     <Linkedin size={24} />
@@ -404,45 +421,45 @@ const Portfolio = () => {
           <h2 className="section-title">
             Experience
           </h2>
-          
+
           <div className="experience-timeline">
             <div className="timeline-line"></div>
-            
+
             <div className="experience-item">
               <div className="experience-card">
                 <div className="experience-header">
                   <div className="experience-icon">
                     <Briefcase size={32} />
                   </div>
-                  
+
                   <div className="experience-info">
                     <div className="experience-title-row">
                       <h3 className="experience-title">AI/ML Intern</h3>
                       <span className="experience-type">Remote</span>
                     </div>
-                    
+
                     <div className="experience-company">
                       <span className="company-name">Tokyabs</span>
                       <span className="separator">•</span>
                       <span className="company-location">Xuhui District, Shanghai</span>
                     </div>
-                    
+
                     <div className="experience-date">
                       <Calendar size={16} />
                       <span>August 2024 – November 2024</span>
                     </div>
-                    
+
                     <div className="experience-tasks">
                       <div className="task-item">
                         <div className="task-bullet task-bullet-blue"></div>
                         <p>Built a voice-controlled AI assistant using ESP32 microcontroller with smart assistant features similar to Alexa.</p>
                       </div>
-                      
+
                       <div className="task-item">
                         <div className="task-bullet task-bullet-purple"></div>
                         <p>Utilized LLMs to develop and optimize audio systems enabling real-time recording, speech-to-text, and text-to-speech capabilities.</p>
                       </div>
-                      
+
                       <div className="task-item">
                         <div className="task-bullet task-bullet-pink"></div>
                         <p>Implemented Retrieval-Augmented Generation (RAG) pipeline to enhance assistant knowledge with external sources for context-aware responses.</p>
@@ -462,7 +479,7 @@ const Portfolio = () => {
           <h2 className="section-title">
             Featured Projects
           </h2>
-          
+
           <div className="projects-grid">
             {projects.map((project, index) => (
               <div key={index} className="project-card">
@@ -472,9 +489,9 @@ const Portfolio = () => {
                   </div>
                   <h3 className="project-title">{project.title}</h3>
                 </div>
-                
+
                 <p className="project-description">{project.description}</p>
-                
+
                 <div className="project-section">
                   <h4 className="project-section-title project-section-blue">Key Highlights:</h4>
                   <div className="project-tags">
@@ -485,7 +502,7 @@ const Portfolio = () => {
                     ))}
                   </div>
                 </div>
-                
+
                 <div className="project-section">
                   <h4 className="project-section-title project-section-purple">Technologies:</h4>
                   <div className="project-tags">
@@ -496,7 +513,7 @@ const Portfolio = () => {
                     ))}
                   </div>
                 </div>
-                
+
                 <div className="project-buttons">
                   <a
                     href={project.demo}
@@ -529,7 +546,7 @@ const Portfolio = () => {
           <h2 className="section-title">
             Technical Skills
           </h2>
-          
+
           <div className="skills-grid">
             <div className="skill-category skill-category-blue">
               <div className="skill-header">
@@ -544,7 +561,7 @@ const Portfolio = () => {
                 ))}
               </div>
             </div>
-            
+
             <div className="skill-category skill-category-purple">
               <div className="skill-header">
                 <Brain size={24} />
@@ -558,7 +575,7 @@ const Portfolio = () => {
                 ))}
               </div>
             </div>
-            
+
             <div className="skill-category skill-category-green">
               <div className="skill-header">
                 <Database size={24} />
@@ -572,7 +589,7 @@ const Portfolio = () => {
                 ))}
               </div>
             </div>
-            
+
             <div className="skill-category skill-category-pink skill-category-large">
               <div className="skill-header">
                 <Cpu size={24} />
@@ -586,7 +603,7 @@ const Portfolio = () => {
                 ))}
               </div>
             </div>
-            
+
             <div className="skill-category skill-category-yellow">
               <div className="skill-header">
                 <Star size={24} />
@@ -610,13 +627,13 @@ const Portfolio = () => {
           <h2 className="section-title">
             Let's Connect
           </h2>
-          
+
           <div className="contact-content">
             <p className="contact-intro">
-              I'm always excited to collaborate on innovative AI projects and discuss new opportunities. 
+              I'm always excited to collaborate on innovative AI projects and discuss new opportunities.
               Let's build something amazing together!
             </p>
-            
+
             <div className="contact-grid">
               <a
                 href="mailto:arbazkhaan.cs@gmail.com"
@@ -626,7 +643,7 @@ const Portfolio = () => {
                 <h3>Email</h3>
                 <p>arbazkhaan.cs@gmail.com</p>
               </a>
-              
+
               <a
                 href="tel:+919953532472"
                 className="contact-card-link contact-card-purple"
@@ -635,14 +652,14 @@ const Portfolio = () => {
                 <h3>Phone</h3>
                 <p>+91 995-353-2472</p>
               </a>
-              
+
               <div className="contact-card-link contact-card-green">
                 <MapPin size={32} className="contact-card-icon" />
                 <h3>Location</h3>
                 <p>New Delhi, India</p>
               </div>
             </div>
-            
+
             <div className="social-links">
               <a
                 href="https://linkedin.com/in/Arbazkhan-cs"
