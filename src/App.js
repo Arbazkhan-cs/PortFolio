@@ -281,7 +281,7 @@ const Portfolio = () => {
           </div>
           
           <h1 className="hero-title">
-            Imran Khan
+            Arbaz Khan
           </h1>
           
           <div className="hero-subtitle">
