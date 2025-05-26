@@ -298,10 +298,10 @@ const Portfolio = () => {
 
 
           <h1 className="hero-title">
-            Arbaz Khan
+            Arbaz khan
           </h1>
 
-          <div className="hero-subtitle">
+          <div className="hero-subtitle"> 
             <span className="typing-text">
               {typingText}
               <span className="typing-cursor">|</span>
