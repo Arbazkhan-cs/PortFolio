@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronDown, Mail, Phone, Linkedin, Github, ExternalLink, Code, Brain, Database, Cpu, Star, Calendar, MapPin, GraduationCap, Briefcase, User } from 'lucide-react';
 import './App.css';
-import profileImage from './img1.jpeg'
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -276,32 +275,20 @@ const Portfolio = () => {
           <div className="hero-avatar">
             <div className="avatar-container">
               <div className="avatar-bg">
-                {profileImage ? (
-                  <img
-                    src={profileImage}
-                    alt="Arbaz Khan - AI/ML Developer"
-                    className="avatar-image"
-                    onError={(e) => {
-                      e.target.style.display = 'none';
-                      e.target.nextSibling.style.display = 'block';
-                    }}
-                  />
-                ) : null}
-                <User
-                  size={80}
-                  className="avatar-icon"
-                  style={{ display: profileImage ? 'none' : 'block' }}
+                <img
+                  src="/img1.jpeg"
+                  alt="Arbaz Khan - AI/ML Developer"
+                  className="avatar-image"
                 />
               </div>
             </div>
           </div>
 
-
           <h1 className="hero-title">
-            Arbaz khan
+            Arbaz Khan
           </h1>
 
-          <div className="hero-subtitle"> 
+          <div className="hero-subtitle">
             <span className="typing-text">
               {typingText}
               <span className="typing-cursor">|</span>
