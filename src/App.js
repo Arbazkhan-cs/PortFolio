@@ -31,7 +31,7 @@ const Portfolio = () => {
     }, 100);
 
     return () => clearInterval(typingInterval);
-  }, [typingIndex]);
+  }, [typingIndex, roles]);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
