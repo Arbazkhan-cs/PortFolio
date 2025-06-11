@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { ChevronDown, Mail, Phone, Linkedin, Github, ExternalLink, Code, Brain, Database, Cpu, Star, Calendar, MapPin, GraduationCap, Briefcase, User } from 'lucide-react';
 import './App.css';
 
