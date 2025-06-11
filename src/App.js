@@ -12,7 +12,12 @@ const Portfolio = () => {
   const [typingText, setTypingText] = useState('');
   const [typingIndex, setTypingIndex] = useState(0);
 
-  const roles = ['AI/ML Developer', 'Deep Learning Engineer', 'AI Research Enthusiast', 'Innovation Creator'];
+  const roles = useMemo(() => [
+    'AI/ML Developer',
+    'Deep Learning Engineer',
+    'AI Research Enthusiast',
+    'Innovation Creator'
+  ], []);
 
   useEffect(() => {
     const currentRole = roles[typingIndex];
