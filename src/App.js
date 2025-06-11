@@ -177,7 +177,7 @@ const Portfolio = () => {
               className="navbar-logo"
               onClick={() => scrollToSection('home')}
             >
-              PortFolio
+              Arbaz khan
             </div>
 
             {/* Desktop Navigation */}
