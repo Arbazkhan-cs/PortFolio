@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+# 🧠 Arbaz Khan - AI/ML Developer Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the source code of my personal portfolio website — built to showcase my work, projects, skills, and journey as an AI/ML Developer and Deep Learning Engineer.
 
-## Available Scripts
+🌐 **Live Site**: [https://www.arbazkhan.me](https://www.arbazkhan.me)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🛠️ Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React.js** – Frontend Framework
+- **Lucide Icons** – Elegant UI icons
+- **JavaScript (ES6+)**
+- **CSS3** – Custom styles and animations
+- **GitHub Actions** – CI/CD Pipeline
+- **AWS S3 + CloudFront** – Static hosting with CDN
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🚀 Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- ⚡ Typing animation for role display
+- 🖼️ Smooth scroll and section-based navigation
+- 📱 Fully responsive on all devices
+- 📂 Projects with live demos and GitHub links
+- 🔄 CI/CD with GitHub Actions and AWS deployment
+- 🌐 Hosted on AWS S3 + served via CloudFront
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📦 Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To run the project locally:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+git clone https://github.com/arbazkhan-cs/your-repo-name.git
+cd your-repo-name
+npm install
+npm start
+```
 
-### `npm run eject`
+Build for production:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+npm run build
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🧪 Deployment (CI/CD)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+This project uses **GitHub Actions** to automatically build and deploy to an **AWS S3** bucket upon every push to the `main` branch. The website is served via **AWS CloudFront** for faster global delivery.
 
-## Learn More
+> 🔒 The S3 bucket is private. Deployment uses OAC/OAI to allow CloudFront access without exposing public files.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🧠 About Me
 
-### Code Splitting
+I’m Arbaz Khan, a passionate AI/ML Developer with a focus on:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- 🤖 Deep Learning & LLMs
+- 📚 AI Research & Fine-Tuning
+- 🔧 Hardware-AI integration (e.g., ESP32)
+- 📈 Continuous learning and open-source contributions
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📫 Contact
 
-### Making a Progressive Web App
+- **Email**: arbazkhan.cs@gmail.com
+- **LinkedIn**: [linkedin.com/in/arbazkhan-cs](https://linkedin.com/in/arbazkhan-cs)
+- **GitHub**: [github.com/arbazkhan-cs](https://github.com/arbazkhan-cs)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+> Thank you for visiting my portfolio! Feel free to fork or contribute 🙌
